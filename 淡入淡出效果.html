@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 400px;
+			height: 300px;
+			overflow: hidden;
+			background-color: #ccc;
+			padding: 20px;
+		}
+		#box img{
+			width: 400px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<h1>淡入淡出效果</h1>
+	<hr>
+	<button id="btn0">fadeOut</button>
+	<button id="btn1">fadeIn</button>
+	<button id="btn2">fadeToggle</button>
+	<button id="btn3">fadeTo</button>
+	<br>
+	<div id="box">
+		<img src="./../img/8.jpg" alt="">
+	</div>
+	<script src="./../jquery-3.4.1.min.js"></script>
+	<script>
+		//透明度的渐变; 同样都可以指定第二个参数，回调函数
+		//fadeTo(指定时间，指定变化的透明度, 回调)
+		$(document).ready(function () {
+			$("#btn0").click(function () {
+				$("#box").fadeOut(2000);
+			});
+			$("#btn1").click(function () {
+				$("#box").fadeIn(2000);
+			})
+			$("#btn2").click(function () {
+				$("#box").fadeToggle(2000);
+			})
+			$("#btn3").click(function () {
+				$("#box").fadeTo(2000, .5, function () {
+					alert("fadeTo end")
+				}); //仅仅改变透明度
+			})
+		})
+	</script>
+</body>
+</html>

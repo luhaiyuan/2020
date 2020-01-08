@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 800px;
+			margin: 100px auto;
+			height: 380px;
+			overflow: hidden;
+		}
+		.item{
+			overflow: hidden;
+			padding: 10px;
+			background-color: #f5f5f5;
+			margin-bottom: 10px;
+		}
+		img{
+			width: 150px;
+			height: 100px;
+			object-fit: cover;
+			float: left;
+			margin-right: 20px;
+		}
+		.item .item-content{
+			float: left;
+			width: 500px;
+		}
+	</style>
+</head>
+<body>
+	 <div id="box">
+	 	<div class="item">
+	 		<img src="./../img/1.jpg" alt="">
+	 		<div class="item-content">
+	 			<h3>1---Hello haha</h3>
+	 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi vitae, mollitia fugiat aliquid at rerum voluptatibus
+	 			</p>
+	 		</div>
+	 	</div>
+	 	<div class="item">
+	 		<img src="./../img/2.jpg" alt="">
+	 		<div class="item-content">
+	 			<h3>2---Hello haha</h3>
+	 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi vitae, mollitia fugiat aliquid at rerum voluptatibus
+	 			</p>
+	 		</div>
+	 	</div>
+	 	<div class="item">
+	 		<img src="./../img/3.jpg" alt="">
+	 		<div class="item-content">
+	 			<h3>3---Hello haha</h3>
+	 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi vitae, mollitia fugiat aliquid at rerum voluptatibus
+	 			</p>
+	 		</div>
+	 	</div>
+	 	<div class="item">
+	 		<img src="./../img/4.jpg" alt="">
+	 		<div class="item-content">
+	 			<h3>4---Hello haha</h3>
+	 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi vitae, mollitia fugiat aliquid at rerum voluptatibus
+	 			</p>
+	 		</div>
+	 	</div>
+	 	<div class="item">
+	 		<img src="./../img/5.jpg" alt="">
+	 		<div class="item-content">
+	 			<h3>5---Hello haha</h3>
+	 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi vitae, mollitia fugiat aliquid at rerum voluptatibus
+	 			</p>
+	 		</div>
+	 	</div>
+	 	<div class="item">
+	 		<img src="./../img/6.jpg" alt="">
+	 		<div class="item-content">
+	 			<h3>6---Hello haha</h3>
+	 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi vitae, mollitia fugiat aliquid at rerum voluptatibus
+	 			</p>
+	 		</div>
+	 	</div>
+	 </div>
+	 <script src="./../jquery-3.4.1.min.js"></script>
+	 <script>
+	 	$(document).ready(function () {
+	 		$(".item:gt(2)").hide();
+	 		setInterval(function () {
+	 			//效果2
+	 			$(".item").eq(2).fadeOut(600, function () {
+	 				$(".item").last().prependTo("#box").delay(200).slideDown(500);
+	 			})
+	 			
+	 				
+	 		}, 3000)
+	 	})
+
+	 </script>
+</body>
+</html>
